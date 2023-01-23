@@ -110,11 +110,11 @@ Data Structures \quad\textbar\quad Artificial Intelligence\quad\textbar\quad Alg
       \resumeItem{SQL time machine}
           {Built a SQL CLI application with extended time travel syntax, i.e. ``time travel monday 4pm". Followup queries are executed from the perspective of that point in time. This is made possible by replicating a PostgreSQL transaction log over Kafka to construct a history database that includes every version of every row, and utilizing the open-source \href{https://github.com/pganalyze/libpg_query}{\textbf{\underline{PostgreSQL query parser}}} to rewrite queries to incorporate time travel CTEs.}
       \resumeItem{Kubernetes resource controllers}
-          {Developed an infrastructure-as-code deployment experience for our customers to submit table schemas and JavaScript trigger functions via the Dataland CLI. Used Kubernetes operators to reconcile their intended configuration and run their code in sandboxed V8 isolates (Deno).}
+          {Developed an infrastructure-as-code deployment experience for customers to submit table schemas and JavaScript trigger functions via the Dataland CLI. Used Kubernetes operators to allocate and monitor DB resources, do SQL migrations, and run user-provided code in sandboxed V8 isolates (Deno).}
         \resumeItem{DevOps and infrastructure}
-          {Used kpt and GKE for operational management of backend microservices. Used Cloud DNS to configure static IP masquerading. Used GCP logging and alerting to monitor system health.}
+          {Operationally managed backend microservices in GKE. This included deploying production upgrades via kpt, configuring Kubernetes node resources and workload requests based on application needs, and using taints and tolerations to pin special workloads. Used Cloud DNS to configure static IP masquerading. Used GCP logging and alerting to monitor system health.}
       \resumeItem{Open-source}
-          {Utilized and deeply studied a variety of open source projects to understand their architecture, illustrating my ability to quickly acclimate to new projects and frameworks. To call out four in particular: In the C programming language, I have read thousands of lines of \href{https://github.com/postgres/postgres}{\textbf{\underline{PostgreSQL}}} and \href{https://github.com/confluentinc/librdkafka}{\textbf{\underline{the Kafka client library}}}. In Go, I studied and utilized \href{https://github.com/ory/kratos}{\textbf{\underline{Ory Kratos}}} to build a simple and secure Authn/Authz service. In C++, I have contributed bug reports, issues and pull requests to \href{https://github.com/duckdb/duckdb/issues?q=author\%3Aaarashy}{\underline{\textbf{DuckDB}}}, an OLAP SQL engine.}
+          {Utilized and deeply studied a variety of open source projects to understand their architecture. To name a few, In the C programming language, I have read thousands of lines of \href{https://github.com/postgres/postgres}{\textbf{\underline{PostgreSQL}}} and \href{https://github.com/confluentinc/librdkafka}{\textbf{\underline{the Kafka client library}}}. In Go, I studied and utilized \href{https://github.com/ory/kratos}{\textbf{\underline{Ory Kratos}}} to build a simple and secure Authn/Authz service. In C++, I have contributed bug reports, issues and pull requests to \href{https://github.com/duckdb/duckdb/issues?q=author\%3Aaarashy}{\underline{\textbf{DuckDB}}}, an OLAP SQL engine. In Rust, I have contributed to the \href{https://github.com/bikeshedder/deadpool}{\textbf{\underline{Postgres connection pool}}} crate and the \href{https://github.com/apache/arrow-rs}{\textbf{\underline{Apache Arrow}}} crate.}
     \resumeItemListEnd
     \vspace{5mm}
     \resumeSubheading
@@ -122,33 +122,37 @@ Data Structures \quad\textbar\quad Artificial Intelligence\quad\textbar\quad Alg
       {Software Engineer / Tech Lead}{July 2019 - July 2021}
       
       \vspace{4mm}
-      Clumio is a private startup that provides cloud data protection at scale. As a member and lead of multiple teams, I architected common platform components, delivered features that enhanced customer UX, and was responsible for the reliability of critical infrastructure.
+      Clumio is a private startup that provides cloud data protection at scale. As a cross-functional member and lead of multiple teams, I architected common platform components, delivered features that enhanced customer UX, and was responsible for the reliability of critical infrastructure. 
       
       \resumeItemListStart
         \resumeItem{Alerts and progress logs}
           {As tech lead, spearheaded the overhaul of the internal and external alerting framework. Identified a lack of transparency into the step-by-step progression of backend workflows. Designed and delivered alerting and log solutions that delight customers. Educated fellow developers on how to integrate with this. Mentored a Customer Success engineer, empowering him to build his first microservice which proactively opens Zendesk tickets in response to failures in the system, driving high customer confidence in the platform.}
         \resumeItem{Public REST APIs/SDKs}
-          {As tech lead, managed the platform, design, deployment, and versioning of 150+ APIs built on Swagger/OpenAPI and API Gateway. Met weekly with developers and PMs, working across time zones to review APIs and documentation of all engineering teams. \newline \href{https://clumio.com/an-outstanding-user-experience-for-api-developers-think-ux-for-rest-apis/}{\underline{\textbf{Wrote a blog about Clumio's API design principles and architecture.}}}}
+          {As tech lead, managed the platform, design, deployment, and versioning of 150+ APIs built on Swagger/OpenAPI and API Gateway. Met weekly with developers and PMs, working across time zones to review APIs and documentation of all engineering teams. Learned about every feature by way of reviewing all APIs. \newline \href{https://clumio.com/an-outstanding-user-experience-for-api-developers-think-ux-for-rest-apis/}{\underline{\textbf{Wrote a blog about Clumio's API design principles and architecture.}}}}
       \resumeItem{Scheduler team}
-          {Scheduled 100k backup jobs for EC2, RDS, and VM disks per day using SNS work queues. Managed the health of key platform services, including a configurable job scheduler and resource manager. Participated in on-call rotation to handle escalations.}
+          {Scheduled 100k backup jobs for EC2, RDS, and VM disks per day using SNS work queues. Managed the health of key platform services, including a configurable job scheduler, resource manager, and task manager. Participated in on-call rotation to handle escalations.}
       \resumeItem{BI dashboards}
-          {Queried against a 40 million row datalake by integrating Snowflake with embedded Sigma dashboards, powering unprecedented visibility into the history of changes in customer data environments.}
+          {Queried against a 40 million row datalake by integrating Snowflake with embedded Sigma dashboards, powering unprecedented visibility into customer AWS compute and cost footprints. Iterated with PMs to ensure  we were presenting the most useful data in the most digestible way.}
       \resumeItemListEnd
     \vspace{5mm}
     \resumeSubheading
       {Microsoft, Azure Identity}{Redmond, WA}
       {Software Engineer Intern}{May 2018 - Aug. 2018}
+          \vspace{2mm}
       \resumeItemListStart
         \resumeItem{Feature flag auto-rollout}
           {Used Azure Functions to automate the configuration management infrastructure for a global LDAP service to minimize human error in deployment, saving {\raise.17ex\hbox{$\scriptstyle\sim$}}3 hours of engineer time per enabled feature.}
       \resumeItemListEnd
     \vspace{5mm}
     \resumeSubheading
-      {Datalogue}{Montreal, Quebec}
+      {Datalogue (Acquired by Nike)}{Montreal, Quebec}
       {Backend Software Engineer Intern}{May 2017 - Aug. 2017}
+      
+          \vspace{4mm}
+Datalogue used ML to prepare, integrate, and transform data from a variety of sources across an enterprise. 
       \resumeItemListStart
         \resumeItem{Data pipeline}
-      {Contributed to stateless, purely functional Scala API that accepts petabyte-scale datasets to deliver massive processing power. Built transcoders for JSON, Excel, XML, and MongoDB.}
+      {Expanded the functionality of Scala data pipelines that deliver massive processing power by transforming data formats including JSON, Excel, XML, and MongoDB to and from a proprietary Graph format.}
       \resumeItemListEnd
 
 \section{Research Projects}
@@ -165,7 +169,7 @@ Data Structures \quad\textbar\quad Artificial Intelligence\quad\textbar\quad Alg
     \resumeSubItem{Presentation at Radiological Society of North America, 2019}{``A DICOM-Embedded Annotation System for 3D Cross-Sectional Imaging Data" (\href{https://github.com/bdrad/pyOsirixScripts/blob/master/rsna2019_poster_aarash.pdf}{\underline{\textbf{Poster}}} \textbar \hspace{0.5mm} \href{https://github.com/aarashy/dicom-viewer}{\underline{\textbf{Source Code}}}).}
     \resumeSubItem{Peer-reviewed publication} {``High precision localization of pulmonary nodules on chest CT utilizing axial slice number labels" (\href{https://link.springer.com/article/10.1186/s12880-021-00594-4}{\underline{\textbf{Publication}}})}
     \resumeSubItem{Weekly reading group}
-      {Participated in weekly discussions of the group's projects and machine learning theory. Presented  lectures on topics such as \href{https://docs.google.com/presentation/d/1bq07GSe7ilcrZInrKemy1EVERqXM25jV_axE1Uhba-c/edit?usp=sharing}{ROC curves and confidence intervals}.}
+      {Participated in weekly discussions of the group's projects and machine learning theory. Presented  lectures on topics such as \href{https://docs.google.com/presentation/d/1bq07GSe7ilcrZInrKemy1EVERqXM25jV_axE1Uhba-c/edit?usp=sharing}{\textbf{\underline{ROC curves and confidence intervals}}}.}
     \resumeSubHeadingListEnd
     
     \vspace{5mm}
